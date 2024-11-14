@@ -11,15 +11,13 @@
             <h1> To do list </h1><br>
             <form action="">
                 <label for="title">Title : </label><br>
-                <input type="text" id="title" name="title" ><br>
+                <input type="text" id="title" name="title" required> ** <br>
                 <label for="description">Description : </label><br>
                 <input type="text" id="description" name="description" ><br><br>
-                <input type="submit" value="Add" onclick=addTask()><br>
+                <input type="button" value="Add" onclick=addTask()><br>
             </form>
         </div>
         <h2> Task list</h2>
-        <ul class="list-container"></ul>
-        <!-- <hr> -->
 
         <div class="counter-container">
             <div class="list-counter">
@@ -27,7 +25,12 @@
                 <hr>
             </div>
         </div>
+        <div id="list-container">
+
+        </div>
     </div>
+    
+    <script type="text/javascript" src="todolist.js"></script>
     
 </body>
 </html>

@@ -7,24 +7,26 @@
 </head>
 <body>
     <div class="todo-container">
-        <div class="box">
+        <div class="todo-form">
             <h1> To do list </h1><br>
             <form action="">
                 <label for="title">Title : </label><br>
                 <input type="text" id="title" name="title" ><br>
                 <label for="description">Description : </label><br>
                 <input type="text" id="description" name="description" ><br><br>
-                <input type="submit" value="Add"><br>
+                <input type="submit" value="Add" onclick=addTask()><br>
             </form>
         </div>
-    </div>
-    <h2> Task list</h2>
-    <ul class="list-container"></ul>
-    <!-- <hr> -->
+        <h2> Task list</h2>
+        <ul class="list-container"></ul>
+        <!-- <hr> -->
 
-    <div class="list-container">
-        Completed : <span id="completed-counter">0</span> | Uncompleted : <span id="uncompleted-counter">0</span>
-        <hr>
+        <div class="counter-container">
+            <div class="list-counter">
+                Completed : <span id="completed-counter">0</span> | Uncompleted : <span id="uncompleted-counter">0</span>
+                <hr>
+            </div>
+        </div>
     </div>
     
 </body>

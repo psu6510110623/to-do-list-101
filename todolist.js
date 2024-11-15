@@ -1,16 +1,36 @@
 const title = document.getElementById("title")
-const description = document.getElementById("description")
 const taskList = document.getElementById("list-container")
 
 function addTask() {
-    const li = document.createElement("li")
-    li.innerHTML = `
-            <label>
-                <input type="checkbox">
-                <span> ${title.value} </span>
-            </label> <br>
-            <span> ${description.value} </span>
-
+    tValue = title.value
+    if(!tValue){
+        alert("โปรดระบุหัวข้อ To do list ของท่าน")
+        return 
+    }
+    const p = document.createElement("p")
+    p.innerHTML = `
+            <li>
+                ${title.value}
+            </li>
         `;
-    taskList.appendChild(li);
+    taskList.appendChild(p);
+    title.value = ''
+
+    function taskDone(){
+        p.style.color = "white"
+        p.style.backgroundColor = "lightgreen"
+        
+        p.removeEventListener("click", taskDone )
+    }
+    p.addEventListener("click", taskDone)
+    
+    const removeBtn = document.createElement("button")
+    removeBtn.appendChild(document.createTextNode("remove"))
+    p.appendChild(removeBtn)
+
+    function remove(){
+        p.remove()
+    }
+
+    removeBtn.addEventListener("click", remove)
 }
